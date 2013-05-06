@@ -60,6 +60,16 @@ enum {
      * gralloc buffer of one of these formats must be supported for use with the
      * GL_OES_EGL_image_external OpenGL ES extension.
      */
+#ifdef MTK_HARDWARE
+    /*
+     * YUV I420
+     *
+     * YUV planner
+     * Y is aligned to 16
+     * U V is aligned to 8
+     */
+    HAL_PIXEL_FORMAT_I420 = 0x100,
+#endif//MTK_HARDWARE
 
     /*
      * Android YUV format:

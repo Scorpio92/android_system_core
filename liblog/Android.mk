@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-ifeq ($(strip $(BOARD_PROVIDES_LIBLOG)),)
 LOCAL_PATH := $(my-dir)
 include $(CLEAR_VARS)
 
@@ -49,6 +48,7 @@ LOCAL_LDLIBS := -lpthread
 LOCAL_CFLAGS := -DFAKE_LOG_DEVICE=1
 include $(BUILD_HOST_STATIC_LIBRARY)
 
+ifeq ($(strip $(BOARD_PROVIDES_LIBLOG)),)
 # Shared and static library for target
 # ========================================================
 include $(CLEAR_VARS)

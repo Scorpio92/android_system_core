@@ -119,6 +119,9 @@ int lookup_keyword(const char *s)
     case 'm':
         if (!strcmp(s, "kdir")) return K_mkdir;
         if (!strcmp(s, "ount")) return K_mount;
+#ifdef MTK_HARDWARE
+        if (!strcmp(s, "knod")) return K_mknod;
+#endif//MTK_HARDWARE
         break;
     case 'o':
         if (!strcmp(s, "n")) return K_on;
